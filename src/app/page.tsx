@@ -11,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#060606] text-[#ededed] font-sans selection:bg-green-500/30">
       {/* 2026 URGENCY BANNER */}
       <div className="bg-red-600 text-white text-[10px] font-black uppercase tracking-[0.3em] py-3 text-center px-4">
-        ⚠️ 30% Federal ITC Warning: Projects must begin construction by July 3, 2026.
+        ⚠️ 30% Federal ITC Warning: Projects must commence by July 3, 2026 (sign & pay deposit).
       </div>
 
       <nav className="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center border-b border-white/5">
