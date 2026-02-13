@@ -2,8 +2,6 @@ import { Resend } from 'resend';
 
 export const runtime = 'edge';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 interface LeadData {
   contactName: string;
   buildingAddress: string;
@@ -44,6 +42,7 @@ function getFinancingLabel(type: string): string {
 
 export async function POST(request: Request) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const data: LeadData = await request.json();
 
     // Validate required fields
