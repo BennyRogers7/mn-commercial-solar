@@ -1,10 +1,42 @@
 import React from 'react';
 import SolarEstimator from '@/components/SolarEstimator';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 export const metadata = {
   title: "Commercial Solar ROI Calculator Minnesota | MN Solar Energy Asset Audit",
   description: "Calculate commercial solar ROI, MACRS depreciation, and property value increases in Minnesota. Expert solar installers with 13 years of experience.",
 };
+
+const locations = [
+  { name: 'Minneapolis', slug: 'minneapolis', region: 'Twin Cities' },
+  { name: 'St. Paul', slug: 'st-paul', region: 'East Metro' },
+  { name: 'Bloomington', slug: 'bloomington', region: 'South Metro' },
+  { name: 'Plymouth', slug: 'plymouth', region: 'West Metro' },
+  { name: 'Eagan', slug: 'eagan', region: 'South Metro' },
+  { name: 'Woodbury', slug: 'woodbury', region: 'East Metro' },
+  { name: 'Maple Grove', slug: 'maple-grove', region: 'Northwest' },
+  { name: 'Brooklyn Park', slug: 'brooklyn-park', region: 'Northwest' },
+  { name: 'St. Louis Park', slug: 'st-louis-park', region: 'West Metro' },
+  { name: 'Edina', slug: 'edina', region: 'Southwest' },
+  { name: 'Roseville', slug: 'roseville', region: 'North Metro' },
+  { name: 'Maplewood', slug: 'maplewood', region: 'East Metro' },
+  { name: 'Golden Valley', slug: 'golden-valley', region: 'West Metro' },
+  { name: 'Shakopee', slug: 'shakopee', region: 'Southwest' },
+  { name: 'Wayzata', slug: 'wayzata', region: 'West Metro' },
+  { name: 'Chaska', slug: 'chaska', region: 'Southwest' },
+];
+
+const industries = [
+  { name: 'Warehouses', slug: 'warehouses', description: 'Distribution centers & logistics facilities' },
+  { name: 'Manufacturing', slug: 'manufacturing', description: 'Industrial & production facilities' },
+  { name: 'Retail', slug: 'retail', description: 'Shopping centers & strip malls' },
+  { name: 'Multi-Family', slug: 'multi-family', description: 'Apartments & housing complexes' },
+  { name: 'Office Buildings', slug: 'office-buildings', description: 'Corporate & professional offices' },
+  { name: 'Healthcare', slug: 'healthcare', description: 'Hospitals, clinics & medical offices' },
+  { name: 'Hospitality', slug: 'hospitality', description: 'Hotels, resorts & event venues' },
+  { name: 'Agriculture', slug: 'agriculture', description: 'Farms & rural businesses (REAP eligible)' },
+];
 
 export default function Home() {
   return (
@@ -14,19 +46,12 @@ export default function Home() {
         ⚠️ 30% Federal ITC Warning: Projects must commence by July 3, 2026 (sign & pay deposit).
       </div>
 
-      <nav className="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center border-b border-white/5">
-        <div className="text-xl font-black tracking-tighter uppercase">
-          MN<span className="text-zinc-500 font-light text-left">CommercialSolar</span>
-        </div>
-        <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
-          Est. 2013 // 13 Years Excellence
-        </div>
-      </nav>
+      <Navigation />
 
       <main className="max-w-7xl mx-auto px-6">
         <header className="py-20 lg:pt-24 lg:pb-16 max-w-5xl">
           <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-8 leading-[0.9] text-white">
-            Minnesota <br/> 
+            Minnesota <br/>
             <span className="text-green-500 italic text-left">Commercial Solar ROI.</span>
           </h1>
           <p className="text-xl text-zinc-400 max-w-2xl leading-relaxed text-left">
@@ -39,81 +64,115 @@ export default function Home() {
            <SolarEstimator />
         </section>
 
-<section className="py-24 border-t border-white/5">
-  <h2 className="text-sm font-bold text-zinc-500 uppercase tracking-[0.3em] mb-12">Performance by Asset Class</h2>
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-    {/* WAREHOUSE / INDUSTRIAL */}
-    <div className="group relative aspect-square overflow-hidden rounded-[2.5rem] border border-white/5 bg-zinc-900">
-      <img src="/warehouse-solar.jpg" alt="Commercial Solar Warehouse" className="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-700" />
-      <div className="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
-        <p className="text-green-500 font-bold text-[10px] uppercase mb-2">Industrial</p>
-        <p className="text-2xl font-bold text-white italic">High-Yield Flat Roofs</p>
-      </div>
-    </div>
-    {/* MULTI-FAMILY */}
-    <div className="group relative aspect-square overflow-hidden rounded-[2.5rem] border border-white/5 bg-zinc-900">
-      <img src="/apartment-solar.jpg" alt="Multi-family Solar" className="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-700" />
-      <div className="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
-        <p className="text-green-500 font-bold text-[10px] uppercase mb-2">Multi-Family</p>
-        <p className="text-2xl font-bold text-white italic">NOI-Driven Arrays</p>
-      </div>
-    </div>
-    {/* RETAIL */}
-    <div className="group relative aspect-square overflow-hidden rounded-[2.5rem] border border-white/5 bg-zinc-900">
-      <img src="/retail-solar.jpg" alt="Retail Commercial Solar" className="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-700" />
-      <div className="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
-        <p className="text-green-500 font-bold text-[10px] uppercase mb-2">Retail / Mixed-Use</p>
-        <p className="text-2xl font-bold text-white italic">OpEx Control</p>
-      </div>
-    </div>
-  </div>
-</section>
-       
-<section className="py-24 border-t border-white/5 bg-gradient-to-b from-transparent to-zinc-950/50">
-  <div className="max-w-4xl mx-auto text-center px-6">
-    <h2 className="text-3xl font-bold italic mb-6">Built on 13 Years of MN Grid Expertise</h2>
-    <p className="text-zinc-400 leading-relaxed mb-10">
-      MN Commercial Solar is an independent ROI-modeling platform. To ensure 100% financial accuracy, every audit requested here is processed by the senior engineering team at <a href="https://apadanatechnology.com" className="text-green-500 hover:underline">Apadana Technology</a>. 
-    </p>
-    
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-      <div>
-        <p className="text-2xl font-black text-white">13+</p>
-        <p className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Years in MN</p>
-      </div>
-      <div>
-        <p className="text-2xl font-black text-white">MWs</p>
-        <p className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Installed</p>
-      </div>
-      <div>
-        <p className="text-2xl font-black text-white">Class A</p>
-        <p className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Licensed</p>
-      </div>
-      <div>
-        <p className="text-2xl font-black text-white">2026</p>
-        <p className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Compliant</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <section className="py-24 border-t border-white/5">
+          <h2 className="text-sm font-bold text-zinc-500 uppercase tracking-[0.3em] mb-12">Performance by Asset Class</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* WAREHOUSE / INDUSTRIAL */}
+            <a href="/warehouses" className="group relative aspect-square overflow-hidden rounded-[2.5rem] border border-white/5 bg-zinc-900 block">
+              <img src="/warehouse-solar.jpg" alt="Commercial Solar Warehouse" className="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
+                <p className="text-green-500 font-bold text-[10px] uppercase mb-2">Industrial</p>
+                <p className="text-2xl font-bold text-white italic">High-Yield Flat Roofs</p>
+              </div>
+            </a>
+            {/* MULTI-FAMILY */}
+            <a href="/multi-family" className="group relative aspect-square overflow-hidden rounded-[2.5rem] border border-white/5 bg-zinc-900 block">
+              <img src="/apartment-solar.jpg" alt="Multi-family Solar" className="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
+                <p className="text-green-500 font-bold text-[10px] uppercase mb-2">Multi-Family</p>
+                <p className="text-2xl font-bold text-white italic">NOI-Driven Arrays</p>
+              </div>
+            </a>
+            {/* RETAIL */}
+            <a href="/retail" className="group relative aspect-square overflow-hidden rounded-[2.5rem] border border-white/5 bg-zinc-900 block">
+              <img src="/retail-solar.jpg" alt="Retail Commercial Solar" className="object-cover w-full h-full opacity-60 group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
+                <p className="text-green-500 font-bold text-[10px] uppercase mb-2">Retail / Mixed-Use</p>
+                <p className="text-2xl font-bold text-white italic">OpEx Control</p>
+              </div>
+            </a>
+          </div>
+        </section>
 
-{/* FOOTER FOR SEO */}
-<footer className="py-12 border-t border-white/5 px-6">
-  <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-    <p className="text-[10px] text-zinc-600 uppercase tracking-widest">
-      © 2026 MN Commercial Solar // Engineering Partner: Apadana Technology
-    </p>
-    <div className="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-zinc-500">
-      <span>Minneapolis, MN</span>
-      <a href="#calculator" className="hover:text-white">ROI Calculator</a>
-      <a href="https://apadanatechnology.com" className="hover:text-white">Engineering Partner</a>
-    </div>
-  </div>
-</footer>
+        {/* INDUSTRIES SECTION */}
+        <section className="py-24 border-t border-white/5">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+            <div>
+              <h2 className="text-3xl font-bold italic text-white mb-2">Industries We Serve</h2>
+              <p className="text-zinc-500 text-sm">Specialized solar solutions for every commercial property type</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {industries.map((industry) => (
+              <a
+                key={industry.slug}
+                href={`/${industry.slug}`}
+                className="group p-6 bg-zinc-900/50 rounded-2xl border border-white/5 hover:border-green-500/30 transition-all"
+              >
+                <h3 className="text-lg font-bold text-white mb-1 group-hover:text-green-500 transition-colors">
+                  {industry.name}
+                </h3>
+                <p className="text-zinc-500 text-sm">{industry.description}</p>
+              </a>
+            ))}
+          </div>
+        </section>
 
-{/* TRUST & SEO CONTENT SECTION */}
+        {/* SERVICE AREAS SECTION */}
+        <section className="py-24 border-t border-white/5">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+            <div>
+              <h2 className="text-3xl font-bold italic text-white mb-2">Minnesota Service Areas</h2>
+              <p className="text-zinc-500 text-sm">Commercial solar installation across the Twin Cities metro</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+            {locations.map((location) => (
+              <a
+                key={location.slug}
+                href={`/${location.slug}`}
+                className="group p-4 bg-zinc-900/50 rounded-xl border border-white/5 hover:border-green-500/30 hover:bg-zinc-900 transition-all text-center"
+              >
+                <p className="text-sm font-bold text-white group-hover:text-green-500 transition-colors">
+                  {location.name}
+                </p>
+                <p className="text-[10px] text-zinc-600 uppercase tracking-wider mt-1">{location.region}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="py-24 border-t border-white/5 bg-gradient-to-b from-transparent to-zinc-950/50">
+          <div className="max-w-4xl mx-auto text-center px-6">
+            <h2 className="text-3xl font-bold italic mb-6">Built on 13 Years of MN Grid Expertise</h2>
+            <p className="text-zinc-400 leading-relaxed mb-10">
+              MN Commercial Solar is an independent ROI-modeling platform. To ensure 100% financial accuracy, every audit requested here is processed by the senior engineering team at <a href="https://apadanatechnology.com" className="text-green-500 hover:underline">Apadana Technology</a>.
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div>
+                <p className="text-2xl font-black text-white">13+</p>
+                <p className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Years in MN</p>
+              </div>
+              <div>
+                <p className="text-2xl font-black text-white">MWs</p>
+                <p className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Installed</p>
+              </div>
+              <div>
+                <p className="text-2xl font-black text-white">Class A</p>
+                <p className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Licensed</p>
+              </div>
+              <div>
+                <p className="text-2xl font-black text-white">2026</p>
+                <p className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Compliant</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* TRUST & SEO CONTENT SECTION */}
         <section className="py-24 border-t border-white/5 grid grid-cols-1 lg:grid-cols-2 gap-16">
-          
+
           {/* LEFT COLUMN: CHECKLIST */}
           <div className="space-y-8">
             <h2 className="text-3xl font-bold italic text-white text-left tracking-tight">The 2026 Solar Audit Checklist</h2>
@@ -160,6 +219,8 @@ export default function Home() {
         </section>
 
       </main>
+
+      <Footer />
     </div>
   );
 }
